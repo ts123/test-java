@@ -1,0 +1,32 @@
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'net.saliman:gradle-cobertura-plugin:2.0.0'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:0.2.1'
+    }
+}
+
+apply plugin: 'cobertura'
+apply plugin: 'coveralls'
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+cobertura.coverageFormats = ['html', 'xml'] 
+
+defaultTasks 'cobertura'
+
+//defaultTasks 'run'
+mainClassName = 'Main'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy:2.1.5'
+    testCompile 'com.googlecode.jmockit:jmockit:1.5'
+    testCompile 'junit:junit:4.11'
+}

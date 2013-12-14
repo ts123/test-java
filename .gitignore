@@ -1,0 +1,19 @@
+# java
+*.class
+*.jar
+*.war
+*.ear
+
+# gradle
+.gradle/
+build/
+
+# idea
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# mac
+.DS_Store
+
